@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all #すべてのレコードを@postsに代入
+    #すべてのレコードを@postsに代入
+    #.orderメソッド(id:"DESC）でメモの順番を降順へ表示
+    @posts = Post.all.order(id:"DESC")
   end
 
   def new
