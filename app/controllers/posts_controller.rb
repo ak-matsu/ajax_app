@@ -11,9 +11,8 @@ class PostsController < ApplicationController
 
   # 既読の操作を行ったときに実行されるアクション
   def checked
-    binding.pry
     post = Post.find(params[:id])
-    
+
     # 既読であるか否かを判別
     if post.checked
       post.update(checked: false)

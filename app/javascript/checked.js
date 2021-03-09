@@ -36,9 +36,6 @@ function check() {
           // javascriptから抜け出す
           return null;
         }
-
-
-
         const item = XHR.response.post;
         if  (item.checked === true) {
           post.setAttribute("date-check", "true");
@@ -49,4 +46,8 @@ function check() {
     });
   });
 }
-window.addEventListener("load", check);
+// ページを読み込んだらcheckを実行するのではなく、
+// window.addEventListener("load", check);
+
+// 一定時間ごとに、自動でcheckを実行する仕様にする。
+setInterval(check,1000);
