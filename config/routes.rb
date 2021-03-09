@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root to: 'posts#index' # 簡単にアクセス出来るように変更。
-  # get 'posts', to: 'posts#index'
-  get 'posts/new' , to: 'posts#new'
   post 'posts' , to: 'posts#create'
-end
+  # queryパラメーターを使用した場合、/posts/?id=1とリクエストを行うと
+  # params[:id]にてパラメーターを取得する
+  # get 'posts' , to: 'posts#checked'
 
-# ルーティング
+  # pathパラメーターはリソースを識別する場合に使う
+  # postのidであれば'posts/:id'のように記載するpathパラメーターの方が認識もしやすい。
+  get 'posts/:id', to: 'posts#checked'
+end
