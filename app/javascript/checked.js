@@ -26,8 +26,19 @@ function check() {
       // .sendメソッドを記述することで初めてリクエストが行える。
       XHR.send();
 
-      
+      // checked.jsに、レスポンスがあった場合の処理
+      // XHR.responseでレスポンスされてきたJSONにアクセスできる。
       XHR.onload = () => {
+        // レスポンスがエラーだった場合の処理
+        // ステータスコードの200は処理成功であるが、!=であるので、処理が成功しない場合を表している
+        if(XHR.status != 200){
+          alert(`Error ${XHR.status}: ${XHR.statusText}`);
+          // javascriptから抜け出す
+          return null;
+        }
+
+
+
         const item = XHR.response.post;
         if  (item.checked === true) {
           post.setAttribute("date-check", "true");
