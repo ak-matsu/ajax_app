@@ -22,9 +22,19 @@ function check() {
       // リクエストを送る際に予め、レスポンスしてほしい情報の形式を指定する。
       // レスポンスの形式はjsonとする。
       XHR.responseType = "json";
-      
+
       // .sendメソッドを記述することで初めてリクエストが行える。
       XHR.send();
+
+      
+      XHR.onload = () => {
+        const item = XHR.response.post;
+        if  (item.checked === true) {
+          post.setAttribute("date-check", "true");
+        }else if  (item.checked === false){
+          post.removeAttribute("data-check");
+        }
+      };
     });
   });
 }
