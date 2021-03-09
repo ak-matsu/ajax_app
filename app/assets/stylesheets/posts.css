@@ -9,6 +9,6 @@
 }
 
 /* div要素のdata-checkがtrueの場合を判別 */
-div[data-check="true"]{
-  background:#585555;
+div[data-check="true"] {
+  background: #585555;
 }
