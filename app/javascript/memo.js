@@ -20,6 +20,7 @@ function memo(){
       // formTextはメモの入力フォームを取得
       // 送信後に入力フォームを削除する必要があるため
       const formText = document.getElementById("content");
+      // メモとして描画する部分のHTMLを定義
       const HTML = `
         <div  class="post" date-id=${item.id}>
           <div class="post-date">
@@ -29,7 +30,10 @@ function memo(){
           ${item.content}
           </div>
         </div>`;
+        // listという要素に対して、insertAdjacentHTMLでHTMLを追加します。
+        // 第一引数にafterendを指定することで、要素listの直後に挿入
         list.insertAdjacentHTML("afterend",HTML);
+        // 空の文字列を上書きすることでメモの入力フォームをリセットさせている。
         formText.value = "";
     };
   });
