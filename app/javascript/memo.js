@@ -36,6 +36,7 @@ function memo(){
         // 空の文字列を上書きすることでメモの入力フォームをリセットさせている。
         formText.value = "";
     };
+    e.preventDefault();
   });
 }
 // Windowを読み込んだ時に実行
