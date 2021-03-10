@@ -13,8 +13,12 @@ function memo(){
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
         return null;
       }
+      // itemはレスポンスとして返されたメモのレコードデータを取得
       const item = XHR.response.post;
+      // listはHTMLを描画する場所を指定する際に使用する「描画する親要素」のlist要素を取得
       const list = document.getElementById("list");
+      // formTextはメモの入力フォームを取得
+      // 送信後に入力フォームを削除する必要があるため
       const formText = document.getElementById("content");
       const HTML = `
         <div  class="post" date-id=${item.id}>
