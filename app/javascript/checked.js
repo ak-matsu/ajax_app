@@ -1,5 +1,6 @@
 function check() {
-  // querySelectorAllメソッドで、postをクラス名にもつ要素を取得できます。postというクラス名を持つ要素はメモの数だけ存在
+  // querySelectorAllメソッドで、postをクラス名にもつ要素を取得できます。
+  // postというクラス名を持つ要素はメモの数だけ存在
   const posts = document.querySelectorAll(".post");
   posts.forEach(function (post) {
      if (post.getAttribute("data-load") != null) {
