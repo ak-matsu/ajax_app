@@ -16,7 +16,7 @@ function check() {
       // getAttributeで属性値を取得、メモのidを取得
       const postId = post.getAttribute("data-id");
 
-      // エンドポイントを呼び出すためXMLHttpRequestをしゆしてHTTPリクエストを送る。
+      // エンドポイントを呼び出すためXMLHttpRequestをしてHTTPリクエストを送る。
       // オブジェクトを生成
       const XHR = new XMLHttpRequest();
 
