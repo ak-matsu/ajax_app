@@ -6,8 +6,8 @@ class PostsController < ApplicationController
   end
   
   def create
-    post = Post.create(content: params[:content],checked:false)
-    render json:{post:post}
+    post = Post.create(content: params[:content], checked: false)
+    render json:{ post: post }
   end
 
   # 既読の操作を行ったときに実行されるアクション
