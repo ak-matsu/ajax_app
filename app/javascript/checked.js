@@ -3,7 +3,7 @@ function check() {
   // postというクラス名を持つ要素はメモの数だけ存在
   const posts = document.querySelectorAll(".post");
   posts.forEach(function (post) {
-     if (post.getAttribute("data-load") != null) {
+    if (post.getAttribute("data-load") != null) {
       return null;
     }
     post.setAttribute("data-load", "true");
@@ -40,7 +40,7 @@ function check() {
           alert(`Error ${XHR.status}: ${XHR.statusText}`);
 
           // javascriptから抜け出す
-          return null;
+          return null;          
         }
         
         // レスポンスされたデータを変数itemに代入している
@@ -52,7 +52,7 @@ function check() {
         } else if (item.checked === false) {
         
         // 未読状態であれば、カスタムデータを削除している
-        post.removeAttribute("data-check");
+          post.removeAttribute("data-check");
         }
       };
     });
